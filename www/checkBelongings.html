@@ -1,0 +1,40 @@
+<ons-page class="main_pages" id="check-page">
+	<ons-toolbar>
+		<div class="center">
+			持ち物確認
+		</div>
+		<div class="left">
+			<ons-back-button>
+				Back
+			</ons-back-button>
+		</div>
+	</ons-toolbar>
+	<ons-list-header>持ち物確認</ons-list-header>
+	<ons-list>
+		<ons-list-item tappable>
+			<label class="left">
+         <ons-checkbox input-id="check-1"></ons-checkbox>
+       </label>
+			<label for="check-1" class="center">
+         <img src="https://mbaas.api.nifcloud.com/2013-09-01/applications/rwIDQxFJnkviPVqJ/publicFiles/favicon.png">
+       </label>
+			<label for="check-1" class="right">
+         <p>かんしゃらマーク<br>各自1個必要</p>
+       </label>
+		</ons-list-item>
+		<ons-list-item tappable>
+			<label class="left">
+         <ons-checkbox input-id="check-2"></ons-checkbox>
+       </label>
+			<label for="check-2" class="center">
+         <img src="https://mbaas.api.nifcloud.com/2013-09-01/applications/rwIDQxFJnkviPVqJ/publicFiles/naruko.jpg">
+       </label>
+			<label for="check-2" class="right">
+         <p>鳴子<br>・必ず1組セットであること<br>・かんしゃら鳴子であること</p>
+       </label>
+		</ons-list-item>
+	</ons-list>
+	<div style="text-align: center">
+		<ons-button onclick="checkComplete()" style="margin: 10px;">準備完了</ons-button>
+	</div>
+</ons-page>

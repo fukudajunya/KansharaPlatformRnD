@@ -119,3 +119,11 @@ function checkComplete() {
     message: '行ってらっしゃい！'
   });
 }
+
+/* 振り動画 */
+// youtubeを開く
+function openURL(urlText){
+  var url = urlText;
+  window.open = cordova.InAppBrowser.open;
+  window.open(url, "_system", 'location=yes');
+}

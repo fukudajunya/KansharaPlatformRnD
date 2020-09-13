@@ -22,3 +22,12 @@ img{
   height:80%;
   text-align: center; 
 }
+
+/*振り動画*/
+.youtube-img{
+  float: left;
+}
+
+.description{
+  float: right;
+}

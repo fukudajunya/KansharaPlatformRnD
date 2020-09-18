@@ -9,6 +9,9 @@
       <div class="profile_wrapper">
         <div style="text-align: center; margin-top: 30px;">
           <p>
+            <ons-input id="e-mail" modifier="underbar" placeholder="EmaiAddress" float></ons-input>
+          </p>
+          <p>
             <ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>
           </p>
           <p>
@@ -17,6 +20,7 @@
           <p style="margin-top: 30px;">
             <ons-button onclick="login()">新規登録 / ログイン</ons-button>
           </p>
+          <p style="margin-top: 5px; font-size: 12px" onclick="document.querySelector('#navigator').pushPage('changePassword.html')">パスワード変更はこちら</p>
         </div>
       </div>
     </div>

@@ -27,10 +27,12 @@ document.addEventListener('init', function (event) {
 
 // ユーザ登録/ログイン処理
 const login = () => {
+  const email = document.getElementById('e-mail').value
   const userName = document.getElementById('username').value;
   const password = document.getElementById('password').value;
   const user = new ncmb.User();
   user
+    .set("mailAddress", email)
     .set("userName", userName)
     .set("password", password);
 
@@ -54,9 +56,25 @@ const login = () => {
     .catch((err) => {
       ons.notification.alert({
         title: 'ログイン失敗',
-        message: 'ユーザー名またはパスワードが間違っています。'})
+        message: 'ユーザー名またはパスワードが間違っています。'
+      })
     });
 };
+
+// パスワード変更
+// アドレスで会員検索してpwを変更する
+const changePW = () => {
+  const currentAddress = document.getElementById('current-email').value;
+  const newPassword = document.getElementById('new-password').value;
+  console.log("現在のアドレス：" + currentAddress);
+  console.log("新しいパスワード：" + newPassword);
+  // ここから未実装
+  var q = new NCMB.Query("user");
+  q.find().then(function (users) {
+    console.log(users);
+  });
+  alert("変更完了");
+}
 
 // ログアウト処理
 const logout = () => {
@@ -98,7 +116,7 @@ function imageClick() {
   if (dialog) {
     dialog.show();
   } else {
-    ons.createElement('dialog.html', { append: true })
+    ons.createElement('dialog/itemDialog.html', { append: true })
       .then(function (dialog) {
         dialog.show();
       });
@@ -122,8 +140,21 @@ function checkComplete() {
 
 /* 振り動画 */
 // youtubeを開く
-function openURL(urlText){
+function openURL(urlText) {
   var url = urlText;
   window.open = cordova.InAppBrowser.open;
   window.open(url, "_system", 'location=yes');
+}
+
+/* 口座情報表示 */
+function checkAccount(){
+  var dialog = document.getElementById('account-dialog');
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('dialog/accountDialog.html', { append: true })
+      .then(function (dialog) {
+        dialog.show();
+      });
+  }
 }
